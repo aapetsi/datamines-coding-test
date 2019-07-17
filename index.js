@@ -105,7 +105,7 @@ const port = process.env.PORT || 3000;
 app.listen(port, () => console.log(`Server is running on port ${port}`));
 
 const getRespondersId = (questionId, responseId) => {
-  let responders = new Array();
+  let responders = [];
   answers.forEach(answer => {
     answer.responses.forEach(response => {
       if (

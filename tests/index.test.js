@@ -50,7 +50,7 @@ describe("Get users", () => {
   });
 
   describe("Should return one user", () => {
-    it("should return one user (41 or 25)", done => {
+    it("should return one user", done => {
       request(app)
         .get("/questions/2/responses/2/responders")
         .expect(200)
