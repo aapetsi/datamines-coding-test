@@ -1,6 +1,8 @@
 const express = require("express");
 const cors = require("cors");
 
+// const getRespondersId = require("./utils/utils");
+
 const app = express();
 
 // Cors middleware
@@ -71,19 +73,29 @@ const answers = [
 ];
 
 app.get("/", (req, res) => {
-  res.json({ questions, answers });
+  res.status(404).send({
+    error: "Page not found",
+    name: "datamines test"
+  });
+});
+
+app.get("/users", (req, res) => {
+  const users = [
+    { name: "apetsi", age: 23 },
+    { name: "adwoa", age: 24 },
+    { name: "bubu", age: 25 }
+  ];
+  res.send(users);
 });
 
 app.get(
   "/questions/:questionId/responses/:responseId/responders",
   (req, res) => {
     const questionId = parseInt(req.params.questionId);
-    const responseId = req.params.responseId;
+    const responseId = parseInt(req.params.responseId);
     const respondersId = getRespondersId(questionId, responseId);
 
-    // search for users who responded with the given question id
-    // const respondersWithQuestionId = {};
-
+    // res.json({ responders: respondersId });
     res.send(respondersId);
   }
 );
@@ -93,7 +105,7 @@ const port = process.env.PORT || 3000;
 app.listen(port, () => console.log(`Server is running on port ${port}`));
 
 const getRespondersId = (questionId, responseId) => {
-  let responders = [];
+  let responders = new Array();
   answers.forEach(answer => {
     answer.responses.forEach(response => {
       if (
