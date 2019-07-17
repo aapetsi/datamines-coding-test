@@ -1,8 +1,6 @@
 const express = require("express");
 const cors = require("cors");
 
-// const getRespondersId = require("./utils/utils");
-
 const app = express();
 
 // Cors middleware
@@ -95,7 +93,6 @@ app.get(
     const responseId = parseInt(req.params.responseId);
     const respondersId = getRespondersId(questionId, responseId);
 
-    // res.json({ responders: respondersId });
     res.send(respondersId);
   }
 );
@@ -104,6 +101,7 @@ const port = process.env.PORT || 3000;
 
 app.listen(port, () => console.log(`Server is running on port ${port}`));
 
+// function to get responders with the given questionId
 const getRespondersId = (questionId, responseId) => {
   let responders = [];
   answers.forEach(answer => {
