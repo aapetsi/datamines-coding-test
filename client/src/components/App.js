@@ -68,7 +68,7 @@ class App extends Component {
           />
           <br />
 
-          <button className="btn btn-secondary btn-lg" onClick={this.onClick}>
+          <button className="btn btn-danger btn-lg" onClick={this.onClick}>
             Get Responders
           </button>
 
