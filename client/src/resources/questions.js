@@ -1,4 +1,4 @@
-const questions = [
+export default [
   {
     questionDescription: "How old are you?",
     id: 2,
@@ -32,5 +32,3 @@ const questions = [
     ]
   }
 ];
-
-export default questions;

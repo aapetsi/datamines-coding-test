@@ -75,7 +75,7 @@ class App extends Component {
           <div>
             <p>
               Total number of users who selected this answer:
-              <span>{this.state.numberOfResponders}</span>
+              <span> {this.state.numberOfResponders}</span>
             </p>
           </div>
         </div>

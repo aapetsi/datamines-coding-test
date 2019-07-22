@@ -1,4 +1,4 @@
-const answers = [
+export default [
   {
     responderId: 41,
     responses: [
@@ -26,5 +26,3 @@ const answers = [
     ]
   }
 ];
-
-export default answers;
