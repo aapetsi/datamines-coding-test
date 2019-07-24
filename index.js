@@ -71,22 +71,6 @@ const answers = [
   }
 ];
 
-// app.get("/", (req, res) => {
-//   res.status(404).send({
-//     error: "Page not found",
-//     name: "datamines test"
-//   });
-// });
-
-// app.get("/users", (req, res) => {
-//   const users = [
-//     { name: "apetsi", age: 23 },
-//     { name: "adwoa", age: 24 },
-//     { name: "bubu", age: 25 }
-//   ];
-//   res.send(users);
-// });
-
 app.get(
   "/questions/:questionId/responses/:responseId/responders",
   (req, res) => {

@@ -58,18 +58,15 @@ class App extends React.Component {
           <h1 className="display-4">Datamines Coding Assignment</h1>
         </div>
         <div className="app-card">
-          {/*Render questions here*/}
           <label>Select your question</label>
           <br />
           <select onChange={this.handleQuestionChange}>
             {questionsSelection}
           </select>
           <br />
-          {/*Render answers here*/}
           <label>Select your answer</label>
           <br />
           <select onChange={this.handleAnswerChange}>{answersSelection}</select>
-          {/*Button to get answers*/}
           <br />
           <hr />
           <button className="btn btn-lg btn-danger" onClick={this.handleClick}>
